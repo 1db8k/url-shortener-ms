@@ -1,0 +1,19 @@
+
+{
+  "name": "headerParser",
+  "version": "1.0.0",
+  "description": "API that gets the IP address, language and operating system for my browser.",
+  "main": "headerParser.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "none",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "engines": {
+    "node": "7.2.0"
+  }
+}
+
