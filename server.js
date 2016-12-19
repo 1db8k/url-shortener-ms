@@ -10,10 +10,14 @@ MongoClient.connect(MONGOLAB_URI, function (err, db) {
   if (err) {
     console.log('Unable to connect to the mongoDB server. Error:', err)
   } else {
-    console.log('Connection established database')
+    console.log('Connection established to database')
 
     db.close()
   }
+})
+
+app.get('/new/:url', (req, res) => {
+
 })
 
 app.use(function (req, res, next) {
