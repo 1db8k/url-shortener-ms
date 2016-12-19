@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Timestamp microservice</title>
+    <title>URL Shortener Microservice</title>
     <meta name="description" content="Timestamp microservice created for Free Code Camp">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
@@ -42,11 +42,13 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
     <div class="container">
-        <h1>Request Header Parser Microservice</h1>
-        <p>Make a GET request to:</p>
-        <code>https://header-parser-m-s.herokuapp.com/api/whoami</code>
-        <p>and it will return a JSON object including the IP address, language and operating system for your browser. Like so:</p>
-        <code>{"ipaddress":"77.190.217.45","language":"en-US","software":"X11; Linux x86_64"}</code>
+        <h1>URL Shortener Microservice</h1>
+        <p>Make a valid GET request to the following url:</p>
+        <code>https://url-tin.herokuapp.com/new/</code>
+        <p>followed by a valid URL like so:</p>
+        <code>https://url-tin.herokuapp.com/new/http://foo.com:80</code>
+        <p>and it will return a JSON object including the appended URL and the shortened one. Like so:</p>
+        <code>{"original_url": "http://foo.com:80", "short_url": "https://url-tin.herokuapp.com/*******"}</code>
     </div>
 </body>
 
