@@ -1,12 +1,5 @@
-// const express = require('express')
-// const app = express()
 const url = require('url')
-// const mongodb = require('mongodb')
-// const MongoClient = mongodb.MongoClient
-// const MONGOLAB_URI = process.env.MONGOLAB_URI
 const encode = require('./encode')
-// const routes = require('./routes')
-// const util = require('util')
 const herokuDomain = 'https://url-tin.herokuapp.com/'
 const apiPath = '/new/'
 
