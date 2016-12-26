@@ -6,26 +6,20 @@ const apiPath = '/new/'
 module.exports = function (app, db) {
   let usersCol = db.collection('urls')
   let countersCol = db.collection('counters')
-  // if (err) {
-  //   console.log('Unable to connect to the mongoDB server. Error:', err)
-  // } else {
+
   console.log('Connection established to database')
 
   app.get(apiPath + '*', (req, res) => {
-      // console.log(`url param: ${req.params[0]}`)
     let originalUrl = req.originalUrl.replace(apiPath, '')
-    if (originalUrl.endsWith('/')) {
-      originalUrl = originalUrl.substr(0, originalUrl.length - 1)
-    }
+    if (originalUrl.endsWith('/')) originalUrl = originalUrl.substr(0, originalUrl.length - 1)
     let urlObj = url.parse(originalUrl)
-      //  ensure valid url format
+    //  ensure valid url format
     if (urlObj.protocol && urlObj.host) {
       console.log('url is valid')
-        //  true ? check if already exists in database
+      //  true ? check if already exists in database
       usersCol.findOne({ 'original_url': urlObj.href }, { fields: { original_url: 1, short_url: 1, _id: 0 } }, function (err, doc) {
         if (err) throw err
         if (doc) {
-              // true ? return the found object
           console.log('found the requested url in the database')
           res.json(doc)
         } else {
@@ -70,7 +64,7 @@ module.exports = function (app, db) {
             console.log('found the requested ENCODED url in the database')
             res.json(doc)
           } else {
-            res.json({ error: 'This url is not on the database.' })
+            res.json({ error: 'This url is not in the database.' })
           }
         }
       )
