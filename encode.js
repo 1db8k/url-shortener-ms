@@ -1,7 +1,7 @@
 var alphabet = '123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ'
 var base = alphabet.length // base is the length of the alphabet (58 in this case)
 
-module.exports = function encode (num, callback) {
+const encode = function (num, callback) {
   var encoded = ''
   while (num) {
     const remainder = num % base
@@ -9,4 +9,9 @@ module.exports = function encode (num, callback) {
     encoded = alphabet[remainder].toString() + encoded
   }
   callback(encoded)
+}
+
+module.exports = function (num, callback) {
+  if (typeof callback === 'function') return encode(num, callback)
+  return encode(num, (encoded) => new Promise((resolve, reject) => resolve(encoded)))
 }
