@@ -8,7 +8,7 @@ const encode = function (num, callback) {
     num = Math.floor(num / base)
     encoded = alphabet[remainder].toString() + encoded
   }
-  callback(encoded)
+  return callback(encoded)
 }
 
 module.exports = function (num, callback) {
